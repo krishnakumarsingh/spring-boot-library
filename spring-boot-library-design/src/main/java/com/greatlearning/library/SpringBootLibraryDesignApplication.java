@@ -15,10 +15,14 @@ public class SpringBootLibraryDesignApplication implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception {
-		GreatLearning greatLearning = new GreatLearning();
-		greatLearning.setCourseName("Testing Course");
-		greatLearning.getCourseName();
-		System.out.println(greatLearning);
+//		GreatLearning greatLearning = new GreatLearning();
+//		greatLearning.setCourseName("Testing Course");
+//		greatLearning.setCourseType("Tesing Type");
+//		greatLearning.setInstuctorName("Testing Instuctor Name");
+//		greatLearning.getCourseType();
+//		greatLearning.getInstuctorName();
+//		greatLearning.getCourseName();
+//		System.out.println(greatLearning);
 	}
 //	@Override
 //	public void run(String... args) throws Exception {
