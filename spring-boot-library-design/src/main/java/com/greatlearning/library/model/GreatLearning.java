@@ -1,63 +1,63 @@
 package com.greatlearning.library.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@Data
 @Getter
 @Setter
-@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class GreatLearning {
+
 	private String courseName;
 	private String courseType;
-	private String instuctorName;
+	//private String instrutorName;
+	private FullName instrutorName;
 	
+	public GreatLearning(String courseName){
+		this.courseName = courseName;
+	}
 	
-}
-//public class GreatLearning {
-//	private String courseName;
-//	private String courseType;
-//	private String instuctorName;
-//
+	public GreatLearning(String courseName,String courseType){
+		this.courseName = courseName;
+		this.courseType = courseType;
+	}
+
 //	public GreatLearning() {
-//
+//		// TODO Auto-generated constructor stub
 //	}
-//
-//	public String getCourseName() {
-//		return courseName;
-//	}
-//
-//	public void setCourseName(String courseName) {
-//		this.courseName = courseName;
-//	}
-//
-//	public String getCourseType() {
-//		return courseType;
-//	}
-//
-//	public void setCourseType(String courseType) {
-//		this.courseType = courseType;
-//	}
-//
-//	public String getInstuctorName() {
-//		return instuctorName;
-//	}
-//
-//	public void setInstuctorName(String instuctorName) {
-//		this.instuctorName = instuctorName;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "GreatLearning [courseName=" + courseName + ", courseType=" + courseType + ", instuctorName="
-//				+ instuctorName + "]";
-//	}
-//
-//	public GreatLearning(String courseName, String courseType, String instuctorName) {
-//		super();
-//		this.courseName = courseName;
-//		this.courseType = courseType;
-//		this.instuctorName = instuctorName;
-//	}
-//
-//}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getCourseType() {
+		return courseType;
+	}
+
+	public void setCourseType(String courseType) {
+		this.courseType = courseType;
+	}
+
+	public FullName getInstrutorName() {
+		return instrutorName;
+	}
+
+	public void setInstrutorName(FullName instrutorName) {
+		this.instrutorName = instrutorName;
+	}
+	
+	
+
+}

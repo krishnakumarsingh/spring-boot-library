@@ -1,23 +1,33 @@
 package com.greatlearning.library.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.greatlearning.library.model.GreatLearning;
+import com.greatlearning.library.service.ExampleService;
+
+import io.swagger.annotations.ApiOperation;
 
 //@Controller
 @RestController
 public class ExampleController {
-
+	
+	@Autowired
+	ExampleService exampleService;
+	
+	@ApiOperation(value = "Provides information about this course")
 	@GetMapping("/info")
-//	@ResponseBody
+	// @ResponseBody
 	public GreatLearning get() {
-		GreatLearning greatLearning = new GreatLearning();
-		greatLearning.setCourseName("Testing Get map course name");
-		greatLearning.setCourseType("Testing Get map course type");
-		greatLearning.setInstuctorName("Testing Get map instuctor name");
-		return greatLearning;
+		return exampleService.get();
 	}
+	
+	@ApiOperation(value = "Allows you to customize information about a course")
+	@PostMapping("/customInfo")
+	public GreatLearning customInfo(String courseName, String courseType, String firstName, String lastname) {
+		return exampleService.customInfo(courseName, courseType, firstName, lastname );
+	}
+
 }
